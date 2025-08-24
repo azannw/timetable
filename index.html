@@ -60,6 +60,7 @@
       border-radius:12px;
       background:#141519;
       margin:8px 0;
+      min-width:0;
     }
     .course{
       font-weight:700;font-size:15px;line-height:1.1
@@ -67,7 +68,9 @@
     .venue{
       justify-self:end;
       font-size:14px;color:var(--muted);
-      padding:.25rem .5rem;border:1px dashed #2f2f36;border-radius:8px
+      padding:.25rem .5rem;border:1px dashed #2f2f36;border-radius:8px;
+      white-space:nowrap;
+      min-width:0;
     }
     .time{
       grid-column:1 / -1;
@@ -81,10 +84,16 @@
 
     /* Compact for small phones */
     @media (max-width:360px){
-      .row{padding:8px 10px}
+      .row{padding:8px 10px; gap:4px 8px}
       .course{font-size:14px}
-      .venue{font-size:13px}
+      .venue{font-size:13px; padding:.2rem .4rem}
       .time{font-size:14px}
+    }
+    
+    /* Extra responsive for very small screens */
+    @media (max-width:320px){
+      .row{gap:4px 6px}
+      .venue{font-size:12px; padding:.15rem .3rem}
     }
 
     /* Watermark */
