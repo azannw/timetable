@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BS CS 2024 — Section G Timetable</title>
+  <style>
+    :root{
+      --bg:#0f0f11;
+      --card:#17181b;
+      --text:#e9e9ee;
+      --muted:#a7a7b3;
+      --accent:#ffe872;
+      --line:#2a2b31;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    .wrap{
+      max-width:560px;
+      margin:0 auto;
+      padding:20px 16px 56px;
+    }
+
+    header{
+      text-align:center;
+      margin:6px 0 14px;
+    }
+    header h1{
+      font-size:20px;margin:0 0 4px 0;font-weight:700;letter-spacing:.2px
+    }
+    header p{
+      margin:0;color:var(--muted);font-size:12px
+    }
+
+    /* Day card */
+    .day{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:10px;
+      margin:10px 0 14px;
+      box-shadow:0 2px 10px rgba(0,0,0,.25);
+    }
+    .day h2{
+      margin:2px 4px 10px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:var(--accent);
+    }
+
+    /* Row */
+    .row{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:6px 10px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#141519;
+      margin:8px 0;
+    }
+    .course{
+      font-weight:700;font-size:15px;line-height:1.1
+    }
+    .venue{
+      justify-self:end;
+      font-size:14px;color:var(--muted);
+      padding:.25rem .5rem;border:1px dashed #2f2f36;border-radius:8px
+    }
+    .time{
+      grid-column:1 / -1;
+      font-variant-numeric:tabular-nums;
+      color:#d9d9e3;font-size:15px
+    }
+    .hint{
+      grid-column:1 / -1;
+      color:var(--muted);font-size:11px
+    }
+
+    /* Compact for small phones */
+    @media (max-width:360px){
+      .row{padding:8px 10px}
+      .course{font-size:14px}
+      .venue{font-size:13px}
+      .time{font-size:14px}
+    }
+
+    /* Watermark */
+    .watermark{
+      position:fixed;
+      left:50%; bottom:8px;
+      transform:translateX(-50%);
+      font-size:10px;
+      opacity:.25;
+      letter-spacing:.18em;
+      text-transform:lowercase;
+      user-select:none;
+      pointer-events:none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Section G</h1>
+      <p></p>
+    </header>
+
+    <!-- MONDAY -->
+    <section class="day">
+      <h2>Monday</h2>
+      <div class="row">
+        <div class="course">Automata</div>
+        <div class="venue">D-303</div>
+        <div class="time">10:00 – 11:20</div>
+      </div>
+      <div class="row">
+        <div class="course">Data St Lab</div>
+        <div class="venue">A-Mehran 1</div>
+        <div class="time">11:30 – 02:20</div>
+      </div>
+      <div class="row">
+        <div class="course">LA</div>
+        <div class="venue">D-303</div>
+        <div class="time">03:55 – 05:15</div>
+      </div>
+    </section>
+
+    <!-- TUESDAY -->
+    <section class="day">
+      <h2>Tuesday</h2>
+      <div class="row">
+        <div class="course">Data St</div>
+        <div class="venue">D-304</div>
+        <div class="time">08:30 – 09:50</div>
+      </div>
+      <div class="row">
+        <div class="course">COAL</div>
+        <div class="venue">D-303</div>
+        <div class="time">11:30 – 12:50</div>
+      </div>
+      <div class="row">
+        <div class="course">Discrete</div>
+        <div class="venue">D-302</div>
+        <div class="time">01:00 – 02:20</div>
+      </div>
+    </section>
+
+    <!-- WEDNESDAY -->
+    <section class="day">
+      <h2>Wednesday</h2>
+      <div class="row">
+        <div class="course">Automata</div>
+        <div class="venue">D-306</div>
+        <div class="time">10:00 – 11:20</div>
+      </div>
+      <div class="row">
+        <div class="course">COAL Lab</div>
+        <div class="venue">C-Margala 3</div>
+        <div class="time">11:30 – 02:20</div>
+      </div>
+      <div class="row">
+        <div class="course">LA</div>
+        <div class="venue">D-303</div>
+        <div class="time">03:55 – 05:15</div>
+      </div>
+    </section>
+
+    <!-- THURSDAY -->
+    <section class="day">
+      <h2>Thursday</h2>
+      <div class="row">
+        <div class="course">Data St</div>
+        <div class="venue">C-410</div>
+        <div class="time">08:30 – 09:50</div>
+      </div>
+      <div class="row">
+        <div class="course">COAL</div>
+        <div class="venue">D-302</div>
+        <div class="time">11:30 – 12:50</div>
+      </div>
+      <div class="row">
+        <div class="course">Discrete</div>
+        <div class="venue">D-302</div>
+        <div class="time">01:00 – 02:20</div>
+      </div>
+      <div class="row">
+        <div class="course">Civics</div>
+        <div class="venue">D-301</div>
+        <div class="time">02:30 – 04:15</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- low-opacity signature -->
+  <div class="watermark">madebyazan</div>
+</body>
+</html>
